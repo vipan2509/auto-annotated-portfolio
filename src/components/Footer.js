@@ -17,7 +17,6 @@ export default function Footer() {
                 <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
                     <a
                         className="ml-3 text-gray-500 transition-colors hover:text-blue-550"
-                        href="#"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
@@ -26,7 +25,6 @@ export default function Footer() {
                     </a>
                     <a
                         className="ml-3 text-gray-500 transition-colors hover:text-blue-550"
-                        href="#"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
@@ -35,7 +33,6 @@ export default function Footer() {
                     </a>
                     <a
                         className="ml-3 text-gray-500 transition-colors hover:text-blue-550"
-                        href="#"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
