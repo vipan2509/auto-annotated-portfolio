@@ -15,30 +15,30 @@ export default function Footer() {
                     © {new Date().getFullYear()}
                 </p>
                 <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
-                    <a
+                    <button
                         className="ml-3 text-gray-500 transition-colors hover:text-blue-550"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
                         <GitHub size={16} />
                         <span className="sr-only">Go to GitHub profile</span>
-                    </a>
-                    <a
+                    </button>
+                    <button
                         className="ml-3 text-gray-500 transition-colors hover:text-blue-550"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
                         <Twitter size={16} />
                         <span className="sr-only">Go to Twitter profile</span>
-                    </a>
-                    <a
+                    </button>
+                    <button
                         className="ml-3 text-gray-500 transition-colors hover:text-blue-550"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
                         <Linkedin size={16} />
                         <span className="sr-only">Go to LinkedIn profile</span>
-                    </a>
+                    </button>
                 </span>
             </div>
         </footer>

@@ -40,9 +40,9 @@ export function Year2024() {
                     </p>
                 </Notes>
                 <ButtonSet>
-                    <a className="w-full md:w-auto btn" href="#" target="_blank" rel="noopener noreferrer">
+                    <button className="w-full md:w-auto btn" target="_blank" rel="noopener noreferrer">
                         <span>view website</span>
-                    </a>
+                    </button>
                 </ButtonSet>
             </TimelineEntry>
         </>
