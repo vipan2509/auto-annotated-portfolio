@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vipan Kumar | Senior Email HTML Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#15013F;
+  --secondary:#AE1478;
+  --accent:#00d1ff;
+  --dark:#0c0c1d;
+  --light:#f6f7fb;
+  --text:#2b2b2b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--light);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* Scroll Indicator */
+.progress-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0%;
+  background:var(--accent);
+  z-index:9999;
+}
+
+/* Layout */
+.container{
+  width:90%;
+  max-width:1150px;
+  margin:auto;
+}
+
+/* Header */
+header{
+  position:fixed;
+  width:100%;
+  padding:18px 0;
+  background:rgba(12,12,29,0.75);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  color:white;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.nav ul{
+  list-style:none;
+  display:flex;
+}
+
+.nav ul li{
+  margin-left:28px;
+}
+
+.nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  font-size:14px;
+  transition:.3s;
+}
+
+.nav ul li a:hover{
+  color:var(--accent);
+}
+
+/* HERO */
+/* HERO BANNER */
+.hero-banner{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 85% 40%, rgba(0, 174, 255, 0.15), transparent 40%),
+    linear-gradient(120deg, #050816 0%, #0a1124 40%, #101c3d 100%);
+  color:white;
+  padding:0 8%;
+}
+
+.hero-container{
+  max-width:1000px;
+}
+
+.intro{
+  font-size:14px;
+  letter-spacing:2px;
+  color:#9aa4c3;
+  margin-bottom:25px;
+}
+
+.hero-banner h1{
+  font-size:56px;
+  font-weight:700;
+  line-height:1.2;
+  max-width:900px;
+}
+
+.highlight{
+  color:white;
+}
+
+.highlight{
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #00d1ff 30%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes shimmer{
+  0%{
+    background-position: -200% center;
+  }
+  100%{
+    background-position: 200% center;
+  }
+}
+
+.muted{
+  color:#5f6b85;
+  font-weight:600;
+  font-size: 25px;
+}
+
+.hero-meta{
+  margin-top:30px;
+  color:#9aa4c3;
+  font-size:16px;
+  line-height:1.8;
+}
+
+.scroll-indicator{
+  position:absolute;
+  bottom:40px;
+  left:8%;
+  font-size:14px;
+  color:#9aa4c3;
+  opacity:.7;
+  animation:float 2s infinite ease-in-out;
+}
+
+/* subtle floating animation */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(6px)}
+  100%{transform:translateY(0)}
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-banner h1{
+    font-size:36px;
+  }
+}
+
+
+.buttons{
+  margin-top:30px;
+}
+
+.btn{
+  padding:12px 26px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  margin-right:15px;
+  transition:.3s ease;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#000;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-outline{
+  border:2px solid white;
+  color:white;
+}
+
+.btn-outline:hover{
+  background:white;
+  color:#000;
+}
+
+.hero-card{
+  background:rgba(255,255,255,0.08);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+.section{
+  padding:110px 0;
+}
+
+.section h2{
+  font-size:32px;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.section p{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  opacity:.8;
+}
+
+/* Skills */
+.skills-section{
+  background:#f9f9ff;
+}
+
+.skills-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.skill-card{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  transition:all .3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.skill-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height:4px;
+  width:100%;
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));
+}
+
+.skill-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.skill-card h3{
+  margin-bottom:20px;
+  font-size:18px;
+  font-weight:600;
+  color:#111;
+}
+
+.skill-card ul{
+  list-style:none;
+  padding:0;
+}
+
+.skill-card ul li{
+  margin-bottom:10px;
+  font-size:14px;
+  color:#555;
+  position:relative;
+  padding-left:18px;
+}
+
+.skill-card ul li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+
+
+
+/* Experience */
+.exp-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+}
+
+.exp-card{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
+  transition:.3s;
+}
+
+.exp-card:hover{
+  transform:translateY(-6px);
+}
+
+.exp-card h3{
+  margin-bottom:5px;
+}
+
+.exp-card span{
+  font-size:14px;
+  color:gray;
+}
+
+.exp-card ul{
+  margin-top:15px;
+  padding-left:18px;
+}
+
+/* Dark Section */
+.dark{
+  background:var(--dark);
+  color:white;
+}
+
+.dark .exp-card{
+  background:rgba(255,255,255,0.05);
+  box-shadow:none;
+}
+
+/* Contact */
+.contact-box{
+  text-align:center;
+  margin-top:30px;
+  font-size:16px;
+}
+
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero p{
+    margin:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"></div>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Vipan<span>.</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero-banner">
+  <div class="hero-container">
+
+    <p class="intro">HEY 👋, MY NAME IS VIPAN!</p>
+
+    <h1>
+      <span class="highlight">Senior Frontend & Email Engineer</span>
+    </h1>
+
+    <h3><span class="muted"> 9+ years of experience delivering scalable web applications and enterprise-grade HTML email solutions with precision, performance, and cross-platform reliability.</span></h3>
+
+    <div class="hero-meta">
+      <p>Vue.js | React | HTML Email Expert</p>
+      <p>vipanp09@gmail.com</p>
+    </div>
+
+    <div class="scroll-indicator">
+      ↓ scroll
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container" data-aos="fade-up">
+    <h2>Professional Summary</h2>
+    <p>
+      Email HTML Developer specializing in hand-coded responsive templates, 
+      FreeMarker dynamic logic implementation, cross-client compatibility testing, 
+      localization support, and Agile marketing automation workflows.
+    </p>
+  </div>
+</section>
+
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <h2 data-aos="fade-up">Core Skills & Tools</h2>
+
+    <div class="skills-grid">
+
+      <!-- Email Development -->
+      <div class="skill-card" data-aos="fade-up">
+        <h3>Email Development</h3>
+        <ul>
+          <li>Hand-coded HTML Emails</li>
+          <li>Modular Template Architecture</li>
+          <li>Dynamic Content Handling</li>
+          <li>Cross-Client Compatibility</li>
+          <li>Localization Support</li>
+          <li>Accessibility Best Practices</li>
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Tools & Platforms</h3>
+        <ul>
+          <li>Eloqua</li>
+          <li>Marketo</li>
+          <li>Litmus</li>
+          <li>Email on Acid</li>
+          <li>Jira</li>
+          <li>Git & Bitbucket</li>
+        </ul>
+      </div>
+
+      <!-- Tech -->
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Languages & Technologies</h3>
+        <ul>
+          <li>HTML5 / CSS3 (Email-Safe)</li>
+          <li>JavaScript</li>
+          <li>FreeMarker</li>
+          <li>Vue.js</li>
+          <li>React</li>
+          <li>Bootstrap</li>
+        </ul>
+      </div>
+
+      <!-- Design -->
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Design Tools</h3>
+        <ul>
+          <li>Figma</li>
+          <li>Adobe XD</li>
+          <li>Photoshop</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="experience" class="section dark">
+  <div class="container">
+    <h2 data-aos="fade-up">Professional Experience</h2>
+
+    <div class="exp-grid">
+
+      <!-- TMotions -->
+      <div class="exp-card" data-aos="fade-up">
+        <h3>TMotions Global Limited – Mohali</h3>
+        <span>Frontend Developer / Email HTML Developer | June 2019 – Present</span>
+        <ul>
+          <li>Develop responsive email templates using hand-coded HTML and CSS.</li>
+          <li>Convert Figma, Adobe XD, and Photoshop designs into clean, modular email builds.</li>
+          <li>Implement dynamic content and logic using FreeMarker within marketing automation platforms.</li>
+          <li>Perform cross-client testing using Litmus to ensure proper rendering across Gmail, Outlook, Apple Mail, and mobile clients.</li>
+          <li>Support multilingual campaigns and localization requirements.</li>
+          <li>Maintain and update reusable email templates and shared components.</li>
+          <li>Follow accessibility best practices including alt text, readable structure, and fallback handling.</li>
+          <li>Collaborate closely with delivery managers and marketing teams to ensure campaigns are accurate and delivered on time.</li>
+        </ul>
+      </div>
+
+      <!-- Cardant -->
+      <div class="exp-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Cardant Holdings Ltd. – Mohali</h3>
+        <span>Frontend Developer | Sept 2018 – June 2019</span>
+        <ul>
+          <li>Developed responsive web applications and reusable UI components.</li>
+          <li>Converted wireframes into functional frontend interfaces.</li>
+          <li>Integrated frontend code with backend APIs.</li>
+          <li>Maintained performance optimization and cross-browser compatibility.</li>
+        </ul>
+      </div>
+
+      <!-- Hash Software -->
+      <div class="exp-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Hash Software – Mohali</h3>
+        <span>Web Designer | Mar 2015 – Sept 2018</span>
+        <ul>
+          <li>Created website mockups using Photoshop and Adobe XD.</li>
+          <li>Converted designs into responsive HTML/CSS layouts using Flexbox and Bootstrap.</li>
+          <li>Ensured mobile-friendly and cross-device compatibility.</li>
+          <li>Supported ongoing design updates and usability improvements.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="section">
+  <div class="container" data-aos="fade-up">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p>Email: vipanp09@gmail.com</p>
+      <p>Phone: +91 82840 01860</p>
+      <p>LinkedIn: linkedin.com/in/creativegr4649</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Vipan Kumar • Senior Email HTML Developer
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:1000,once:true});
+
+/* Always load from top */
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+</script>
+
+</body>
+</html>
